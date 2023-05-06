@@ -14,6 +14,7 @@ from firebase_admin import credentials, storage
 import google.auth
 import google.auth.transport.requests
 import requests
+import json
 
 cred = credentials.Certificate("drawingapp3-firebase-adminsdk-v53rh-226ee77a90.json")
 firebase_app = None
