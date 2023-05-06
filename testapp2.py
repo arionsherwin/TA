@@ -21,8 +21,9 @@ if not firebase_admin._apps:
     firebase_app = firebase_admin.initialize_app(cred, {'storageBucket': 'drawingapp3.appspot.com'})
 else:
     firebase_app = firebase_admin.get_app()
-
 bucket = storage.bucket()
+
+
 
 def load_model():
     model = tf.keras.models.load_model('model4.h5')
@@ -85,6 +86,11 @@ if choice == "Drawing":
     bg_color = st.sidebar.color_picker("Background color hex: ", "#eee")
 
     realtime_update = st.sidebar.checkbox("Update in realtime", True)
+    
+    if "canvas_result" not in st.session_state:
+        st.session_state.canvas_result = None
+
+    canvas_result = st.session_state.canvas_result
 
     canvas_result = st_canvas(
         fill_color="rgba(350, 350, 0, 0.1)",
