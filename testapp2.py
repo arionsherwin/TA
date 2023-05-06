@@ -104,15 +104,14 @@ if choice == "Drawing":
         key="canvas",
     )
     if st.button("Simpan Gambar"):
-      
-      image_data = st.session_state.canvas_result.to_json()
-      if image_data:
-        image = Image.open(io.BytesIO(image_data.encode()))
-        filename = str(pilihan_soal)
+        drawing = st.session_state.canvas_result
+        if drawing is not None:
+            drawing_json = json.dumps(drawing)
+            filename = str(pilihan_soal)
 
-        blob = bucket.blob(filename)
-        blob.upload_from_file(io.BytesIO(image.tobytes()))
-        st.success('Gambar berhasil diupload ke Firebase Storage!')
+            blob = bucket.blob(flename)
+            blob.upload_from_string(drawing_json)
+            st.success('Gambar berhasil disimpan di Firebase Storage')
 
     if st.button("Cek Jawaban"):
         if canvas_result.image_data is not None:
