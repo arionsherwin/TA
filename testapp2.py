@@ -109,7 +109,7 @@ if choice == "Drawing":
         drawing_json = json.dumps(drawing)
         filename = str(pilihan_soal)
 
-        blob = bucket.blob(flename)
+        blob = bucket.blob(filename)
         blob.upload_from_string(drawing_json)
         st.success('Gambar berhasil disimpan di Firebase Storage')
 
