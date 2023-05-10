@@ -111,7 +111,7 @@ if choice == "Drawing":
 
         blob = bucket.blob(filename)
         blob.upload_from_string(drawing_json)
-        st.success('Gambar berhasil disimpan di Firebase Storage')
+        st.success('Gambar berhasil disimpan di database! Terima Kasih.')
 
     if st.button("Cek Jawaban"):
         if canvas_result.image_data is not None:
