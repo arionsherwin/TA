@@ -156,7 +156,7 @@ elif choice == "Tentang Aplikasi":
 
     ## Data yang digunakan untuk membangun aplikasi ini merupakan gambar dua dimensi angka 0 – 9 yang dibuat dengan tulisan tangan menggunakan aplikasi paint. 
     
-    ##Data yang digunakan berjumlah total 2000 gambar dengan 200 gambar per kelas datanya dan memiliki resolusi yang berbeda pula tiap kelas datanya.
+    ## Data yang digunakan berjumlah total 2000 gambar dengan 200 gambar per kelas datanya dan memiliki resolusi yang berbeda pula tiap kelas datanya.
 
     ## Aplikasi ini dibangun oleh Mikogizka Satria Kartika (1301194086) dan Dr. Putu Harry Gunawan, S.Si., M.Si., M.Sc. sebagai dosen pembimbing.
     """
