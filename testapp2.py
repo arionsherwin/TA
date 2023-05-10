@@ -72,7 +72,7 @@ def save_data(data, img):
     img_name = data["name"] + ".jpg"
     storage.child(img_name).put(img)
 
-menu = ["Drawing", "Info Aplikasi", "Tutorial"]
+menu = ["Drawing", "Tentang Aplikasi", "Tentang Data"]
 choice = st.sidebar.selectbox("Pilih Halaman", menu)
 
 if choice == "Drawing":
@@ -149,27 +149,35 @@ if choice == "Drawing":
         else:
             st.write("Harap gambar dihasilkan terlebih dahulu menggunakan canvas.")
 
-elif choice == "Info Aplikasi":
-    st.title("Info Aplikasi")
+elif choice == "Tentang Aplikasi":
+    st.title("Tentang Aplikasi")
     info_text = """
-    ## Aplikasi ini merupakan aplikasi latihan menulis angka 0 - 9 bagi anak pra-sekolah.
+    ## Drawing Apps for Kids merupakan aplikasi latihan menulis angka 0 - 9 bagi anak pra-sekolah yang dibangun menggunakan metode CNN/Convolutional Neural Network.
 
-    ## Aplikasi ini dibangun menggunakan metode CNN/Convolutional Neural Network.
+    ## Data yang digunakan untuk membangun aplikasi ini merupakan gambar dua dimensi angka 0 – 9 yang dibuat dengan tulisan tangan menggunakan aplikasi paint. 
+    
+    ##Data yang digunakan berjumlah total 2000 gambar dengan 200 gambar per kelas datanya dan memiliki resolusi yang berbeda pula tiap kelas datanya.
 
-    ## Aplikasi ini dibangun oleh Mikogizka Satria Kartika (1301194086) dan Dr. Putu Harry Gunawan, S.Si., M.Si., M.Sc. sebagai dosen pembimbing
+    ## Aplikasi ini dibangun oleh Mikogizka Satria Kartika (1301194086) dan Dr. Putu Harry Gunawan, S.Si., M.Si., M.Sc. sebagai dosen pembimbing.
     """
     st.write(info_text)
 
-elif choice == "Tutorial":
-    st.title("Tutorial")
+elif choice == "Tentang Data":
+    st.title("Tentang Data")
     st.write("""
-    ## Cara Menggunakan Drawing Apps For Kids
-    1. Ada beberapa menu pada sidebar, yaitu "Drawing", "Info Aplikasi", dan "Tutorial".
-    2. Untuk mulai menggambar pilih menu "Drawing", untuk melihat info aplikasi pilih menu "Info Aplikasi", dan untuk melihat panduan penggunaan aplikasi pilih menu "Tutorial"
-    3. Pada menu Drawing, untuk menggambar, pilih soal terlebih dahulu pada menu yang tersedia.
-    4. Gunakan Mouse untuk menggambar pada canvas yang tersedia, sesuai dengan soal yang telah anda pilih.
-    5. Klik tombol Cek Jawaban untuk mengecek jawaban yang telah anda gambar/tulis pada canvas.
-    6. Setelah klik tombol Cek Jawaban, maka akan dioutputkan hasil pengecekan jawabannya.
-    7. Klik tombol Simpan Gambar untuk menyimpan jawaban yang telah anda gambar/tulis pada canvas ke dalam database.
-    8. Setelah klik tombol Simpan Gambar, maka record jawaban anda akan tersimpan di database.
+    ## Berikut adalah contoh data yang digunakan dalam proses pembangunan aplikasi ini.
 """)
+    image1 = Image.open('01.jpg')
+    image2 = Image.open('23.jpg')
+    image3 = Image.open('45.jpg')
+    image4 = Image.open('67.jpg')
+    image5 = Image.open('89.jpg')
+    
+    st.image(image1, caption='Contoh dataset angka 0 dan 1', use_column_width=True)
+    st.image(image2, caption='Contoh dataset angka 2 dan 3', use_column_width=True)
+    st.image(image3, caption='Contoh dataset angka 4 dan 5', use_column_width=True)
+    st.image(image4, caption='Contoh dataset angka 6 dan 7', use_column_width=True)
+    st.image(image5, caption='Contoh dataset angka 8 dan 9', use_column_width=True)
+    
+
+
