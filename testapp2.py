@@ -15,6 +15,7 @@ import google.auth
 import google.auth.transport.requests
 import requests
 import json
+from datetime import datetime
 
 cred = credentials.Certificate("drawingapp3-firebase-adminsdk-v53rh-226ee77a90.json")
 firebase_app = None
@@ -105,14 +106,22 @@ if choice == "Drawing":
         key="canvas",
     )
     if st.button("Simpan Gambar"):
-        drawing = st.session_state.canvas_result
-        drawing_json = json.dumps(drawing)
-        filename = str(pilihan_soal)
-
-        blob = bucket.blob(filename)
-        blob.upload_from_string(drawing_json)
-        st.success('Gambar berhasil disimpan di database! Terima Kasih.')
-
+        image = Image.fromarray(canvas_result.image_data.astype(np.uint8), 'RGB')
+        buffer = BytesIO()
+        image.save(buffer, format="PNG")
+        check = str(pilihan_soal)
+        if check == "Angka 0":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka0.png"
+            path = f"0/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka0_{i}.png"
+                path = f"0/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+      
     if st.button("Cek Jawaban"):
         if canvas_result.image_data is not None:
             image = Image.fromarray(canvas_result.image_data.astype(np.uint8)).convert("RGB")
