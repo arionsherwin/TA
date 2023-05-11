@@ -106,7 +106,7 @@ if choice == "Drawing":
         key="canvas",
     )
     if st.button("Simpan Gambar"):
-        image = Image.fromarray(canvas_result.image_data.astype(np.uint8), 'RGB')
+        image = Image.fromarray(canvas_result.image_data.astype(np.uint8)).convert("RGB")
         buffer = BytesIO()
         image.save(buffer, format="PNG")
         check = str(pilihan_soal)
