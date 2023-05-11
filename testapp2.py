@@ -121,6 +121,105 @@ if choice == "Drawing":
             blob = bucket.blob(path)
             blob.upload_from_string(buffer.getvalue(), content_type='image/png')
             st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 1":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka1.png"
+            path = f"1/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka1_{i}.png"
+                path = f"1/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 2":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka2.png"
+            path = f"2/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka2_{i}.png"
+                path = f"2/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 3":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka3.png"
+            path = f"3/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka3_{i}.png"
+                path = f"3/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 4":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka4.png"
+            path = f"4/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka4_{i}.png"
+                path = f"4/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 5":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka5.png"
+            path = f"5/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka5_{i}.png"
+                path = f"5/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 6":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka6.png"
+            path = f"6/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka6_{i}.png"
+                path = f"6/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 7":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka7.png"
+            path = f"7/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka7_{i}.png"
+                path = f"7/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 8":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka8.png"
+            path = f"8/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka8_{i}.png"
+                path = f"8/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
+        if check == "Angka 9":
+            filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + "_angka9.png"
+            path = f"9/{filename}"
+            i = 1
+            while bucket.blob(path).exists():
+                filename = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") + f"_angka9_{i}.png"
+                path = f"9/{filename}"
+                i += 1
+            blob = bucket.blob(path)
+            blob.upload_from_string(buffer.getvalue(), content_type='image/png')
+            st.success('Gambar berhasil disimpan di database! Terima Kasih.')
       
     if st.button("Cek Jawaban"):
         if canvas_result.image_data is not None:
